@@ -2,6 +2,8 @@ from escola.models import Estudante, Curso, Matricula
 from escola.serializers import EstudanteSerializer, CursoSerializer, MatriculaSerializer, ListaMatriculaEstudanteSerializer, ListaMatriculasCursoSerializer, EstudanteSerializerV2
 from rest_framework import viewsets, generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
+from escola.throttles import MatriculaAnonRateThrottle
 
 
 class EstudanteViewSet(viewsets.ModelViewSet):
@@ -25,6 +27,7 @@ class CursoViewSet(viewsets.ModelViewSet):
 class MatriculaViewSet(viewsets.ModelViewSet):
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
+    throttle_classes = [UserRateThrottle, MatriculaAnonRateThrottle]
 
 
 class ListaMatriculaEstudante(generics.ListAPIView):
