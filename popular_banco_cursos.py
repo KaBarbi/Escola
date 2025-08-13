@@ -1,4 +1,3 @@
-from escola.models import Curso
 import os
 import django
 import random
@@ -6,6 +5,7 @@ import random
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
 django.setup()
 
+from escola.models import Curso
 
 dados = [
     ('CPOO1', 'Curso de Python Orientação à Objetos 01'),
@@ -24,11 +24,9 @@ dados = [
 
 niveis = ['B', 'I', 'A']
 
-
 def criar_cursos():
     for codigo, descricao in dados:
         nivel = random.choice(niveis)
         Curso.objects.create(codigo=codigo, descricao=descricao, nivel=nivel)
-
 
 criar_cursos()
