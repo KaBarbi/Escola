@@ -1,5 +1,3 @@
-**README.md**
-
 # API ESCOLA
 
 Este projeto foi desenvolvido durante o curso "Django REST Framework: trabalhando com permissões, documentação, limitações, CORS e deploy na AWS" da Alura
@@ -27,8 +25,11 @@ python manage.py runserver
 ## Funcionalidades abordadas
 
 ✅ Autenticação e Permissões: configuração de regras de acesso a endpoints.
+
 ✅ Limitação de requisições (Rate Limiting): prevenção de abusos no consumo da API.
+
 ✅ CORS (Cross-Origin Resource Sharing): liberação de acesso a partir de diferentes origens.
+
 ✅ Deploy na AWS: publicação da aplicação em ambiente de nuvem.
     
 ## Stack utilizada
